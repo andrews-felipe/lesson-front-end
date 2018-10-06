@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthService } from './auth.service';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes';
 
 
 @NgModule({
@@ -17,9 +19,11 @@ import { AuthService } from './auth.service';
     LoginComponent,
     SignUpComponent
   ],
+  
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -1,12 +1,12 @@
 
 
-<div class="flex">
+<form submit="login()" class="flex">
   <div class="item-flex">
         <div class="jumbotron">
             <p class="text-center title">L O G I N</p>
-            <input type="email" placeholder="Login" [(ngModel)]="nUser.email">
-            <input type="password" placeholder="Passwrod" [(ngModel)]="nUser.password">
+            <input type="email" placeholder="Login" [(ngModel)]="nUser.email" name="email" required>
+            <input type="password" placeholder="Passwrod" [(ngModel)]="nUser.password" name="password" required>
             <button type="button" (click)="Validatelogin()">Login</button>
         </div>
     </div>
-</div>
+</form>
