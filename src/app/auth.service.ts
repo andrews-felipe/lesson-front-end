@@ -3,44 +3,28 @@ import { User } from './models/user';
 
 @Injectable()
 export class AuthService {
-
-
   /**
-   * Predefined users
+   * Lista de Usuários do sistema
+   * Essa lista Array tipo User, contém um usuário.
    */
-  users : Array<User> = [
-    {
-      name : '',
-      email : 'admin@admin',
-      password : '123'
-    }
+  private users : Array<User> = [
+    {nome : 'andrews', email : 'adm@adm', password : '123'}
   ]
 
-  private loginValid : boolean
-    
   constructor() { }
-
-  validateUser(){
-    this.loginValid = true
-  }
-
-  isLogged(){
-    return this.loginValid
-  }
-
-
-  addUser(user: User){
-    this.users.push(user)
-  }
-
-  signIn(user : User) : Boolean{
-    this.users.forEach((res)=>{
-      if(res.email === user.email && res.password === user.password){
-        this.validateUser()
-        return true
+  /**
+   * Método para verificar se o usuário recebido contém na lista definida acima ( users )
+   * usando escopo simples
+   * @param user 
+   */
+  isValid(user : User){
+    let result : boolean = false 
+    this.users.forEach(element=>{
+      if(element.email === user.email && element.password === user.password){
+        result = true
       }
     })
-    return false
+    return result
   }
 
 }

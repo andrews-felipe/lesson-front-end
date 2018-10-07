@@ -1,13 +1,11 @@
-
-<!-- para todo tipo de formulário usamos a tag FORM que ja chama um método como submit -->
-
-<form (ngSubmit)="login()" class="flex"> 
+<form (ngSubmit)="createUser()" class="flex"> 
   <div class="item-flex">
     <div class="jumbotron">
-      <p>L O G I N</p>
+      <p>C A D A S T R O</p>
+      <input type="text" placeholder="login" [(ngModel)]="newUser.nome" name="nome">
       <input type="text" placeholder="login" [(ngModel)]="newUser.email" name="email">
       <input type="password" placeholder="Senha" [(ngModel)]="newUser.password" name="password">
-      <button class="btn btn-primary btn-block" submit >Login</button>
+      <button class="btn btn-primary btn-block" submit >Cadastro</button>
     </div>  
   </div>
 </form>
